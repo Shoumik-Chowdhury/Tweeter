@@ -17,6 +17,7 @@ article header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-top: 0.5em;
   margin-left: 1em;
   margin-right: 1em;
 }
@@ -32,7 +33,7 @@ article footer {
 
 .tweet-body{
   height: 2em;
-  margin-top: 1em;
+  margin-top: 0.5em;
   margin-left: 1em;
 }
 
@@ -43,6 +44,15 @@ article footer {
 
 .icons .fas:hover {
   color: rgba(167, 144, 14, 0.383);
+}
+
+#name {
+  display: flex;
+}
+
+#name img {
+  max-height: 50%;
+  margin-right: 0.5em;
 }
 
 #time {
