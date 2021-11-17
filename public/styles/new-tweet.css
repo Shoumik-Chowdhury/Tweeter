@@ -7,6 +7,8 @@ main section {
 section form {
   display: flex;
   flex-direction: column;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 form label {
@@ -15,6 +17,7 @@ form label {
 
 form textarea {
   font-weight: bold;
+  color: #545149;
   outline: none;
   background: transparent;
   border: none;
