@@ -40,3 +40,15 @@ form button {
 .counter.negetive {
   color: red;
 }
+
+#empty-tweet {
+  margin-top: 4px;
+  border: red 3px solid;
+  color: red;
+}
+
+#long-tweet {
+  margin-top: 4px;
+  border: red 3px solid;
+  color: red;
+}
