@@ -37,7 +37,10 @@ $(document).ready(function() {
     event.preventDefault();
     
     let $formData = $(this).serialize();
-    
+
+    if (!$('#tweet-text').val()) return alert('Cannot post empty tweet!!!');
+    if ($('.counter').val() < 0) return alert('Tweet too long!!!');
+
     $.post("/tweets/", $formData);
     
   });
