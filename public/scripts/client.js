@@ -62,9 +62,10 @@ $(document).ready(function() {
         let lastTweet = res[res.length - 1];
         renderTweets([lastTweet]); // render the latest tweet
       });
-    }, 300);
+    }, 400);
 
     $("#tweet-text").val(""); // Empty form text input area after submission
+    $(".counter").val(140);
     $("#tweet-text").focus(); // Focus automatically on text area after submission to allow continue typing
 
   });
