@@ -27,6 +27,22 @@ main {
   margin: auto;
   width: 90%;
 }
+
 /*
 * Additional CSS can be defined below or in other CSS files, as per instructions
 */
+
+@media all and (min-width: 1024px) {
+
+  body {
+    display: flex;
+    flex-direction: row;
+  }
+
+  main {
+    margin: 1em;
+    margin-top: 200px;
+    width: 55%;
+  }
+
+}
