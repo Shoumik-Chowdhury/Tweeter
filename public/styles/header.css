@@ -15,3 +15,25 @@ header h2 {
   font-size: 1.5em;
   font-weight: normal;
 }
+
+@media all and (min-width: 1024px) {
+
+  .main {
+    margin-top: 200px;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 45%;
+    height: 300px;
+    font-size: 75%;
+  }
+
+  .profile-pic {
+    display: flex;
+    justify-content: center;
+  }
+
+  .profile-pic img {
+    max-width: 60%;
+  }
+
+}
