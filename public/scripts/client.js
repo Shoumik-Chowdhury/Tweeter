@@ -4,12 +4,12 @@ $(document).ready(function() {
 
   renderTweets = (data) => { // Renders all tweets and adds them to index.html
     
-    for(let val of data) {
+    for (let val of data) {
       let $tweet = createTweetElement(val);
       $('.tweet-container').prepend($tweet);
     }
     
-  }
+  };
   
   createTweetElement = (data) => { // Creates single tweet article from data object
     
@@ -26,9 +26,9 @@ $(document).ready(function() {
     $tweet.append($header).append($body).append($footer);
 
     return $tweet;
-  }
+  };
   
-  const escape = function (str) { // Used to escape XSS
+  const escape = function(str) { // Used to escape XSS
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
@@ -45,13 +45,13 @@ $(document).ready(function() {
       let errMsg  = '<div id="empty-tweet">Cannot post empty tweet! That\'s illegal! <i class="fas fa-exclamation-triangle"></i></div>';
       $(".error-text").html(errMsg).hide().slideDown();
       return;
-    };
+    }
 
     if ($('.counter').val() < 0) { // Detect character limit violation, show error msg
       let errMsg = '<div id="long-tweet">Cannot post more than 140 characters! <i class="fas fa-exclamation-triangle"></i></div>';
       $(".error-text").html(errMsg).hide().slideDown();
       return;
-    };
+    }
     
     $(".error-text").empty(); // Hide error text if already shown and no error detected
 
@@ -61,7 +61,7 @@ $(document).ready(function() {
       $.get("/tweets", (res) => {
         let lastTweet = res[res.length - 1];
         renderTweets([lastTweet]); // render the latest tweet
-      })
+      });
     }, 300);
 
     $("#tweet-text").val(""); // Empty form text input area after submission
