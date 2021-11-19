@@ -18,8 +18,15 @@ nav span {
   font-size: 1.5em;
 }
 
+.compose {
+  background: none;
+  border: none;
+  color: #FFFFFF;
+}
+
 .fa-angle-double-down {
   display: flex;
   justify-content: center;
+  height: 70px;
   color: rgb(255, 0, 0);
 }
