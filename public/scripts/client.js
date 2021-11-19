@@ -1,12 +1,8 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
+// Client side JS
 
 $(document).ready(function() {
 
-  renderTweets = (data) => {
+  renderTweets = (data) => { // Renders all tweets and adds them to index.html
     
     for(let val of data) {
       let $tweet = createTweetElement(val);
@@ -15,7 +11,7 @@ $(document).ready(function() {
     
   }
   
-  createTweetElement = (data) => {
+  createTweetElement = (data) => { // Creates single tweet article from data object
     
     const $tweet = $('<article></article>');
     
@@ -32,48 +28,48 @@ $(document).ready(function() {
     return $tweet;
   }
   
-  const escape = function (str) {
+  const escape = function (str) { // Used to escape XSS
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
 
-  $("form").submit(function(event) {
+  $("form").submit(function(event) { // Functions to execute on form submit
     
     event.preventDefault();
     
-    let $formData = $(this).serialize();
+    let $formData = $(this).serialize(); // Serialize form data as query string
 
-    if (!$('#tweet-text').val()) {
+    if (!$('#tweet-text').val()) { // Detect empty tweet submission, show error msg
       let errMsg  = '<div id="empty-tweet">Cannot post empty tweet! That\'s illegal! <i class="fas fa-exclamation-triangle"></i></div>';
       $(".error-text").html(errMsg).hide().slideDown();
       return;
     };
 
-    if ($('.counter').val() < 0) {
+    if ($('.counter').val() < 0) { // Detect character limit violation, show error msg
       let errMsg = '<div id="long-tweet">Cannot post more than 140 characters! <i class="fas fa-exclamation-triangle"></i></div>';
       $(".error-text").html(errMsg).hide().slideDown();
       return;
     };
     
-    $(".error-text").empty();
+    $(".error-text").empty(); // Hide error text if already shown and no error detected
 
-    $.post("/tweets/", $formData);
+    $.post("/tweets/", $formData); // Send AJAX post request with form input serialized
     
-    setTimeout(()=>{
+    setTimeout(()=>{ // Send AJAX get request after a short delay to prevent sync issues
       $.get("/tweets", (res) => {
         let lastTweet = res[res.length - 1];
-        renderTweets([lastTweet]);
+        renderTweets([lastTweet]); // render the latest tweet
       })
     }, 300);
 
-    $("#tweet-text").val("");
-    $("#tweet-text").focus();
+    $("#tweet-text").val(""); // Empty form text input area after submission
+    $("#tweet-text").focus(); // Focus automatically on text area after submission to allow continue typing
 
   });
   
-  loadTweets = function() {
+  loadTweets = function() { // Load previously saved tweets in database
     
     $.get("/tweets", (res) => {
       renderTweets(res);

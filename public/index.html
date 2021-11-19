@@ -40,6 +40,7 @@
         <i class="fas fa-angle-double-down"></i>
       </div>
     </nav>
+    <!-- Header with profile pic and name -->
     <header class="main">
       <div class="profile-pic">
           <img src="/images/profile-hex.png"> 
@@ -52,6 +53,7 @@
     
     <!-- Page-specific (main) content here -->
     <main class="container">
+      <!-- Section for writing new tweets -->
       <section class="new-tweet">
         <div class="error-text"></div>
         <form method="POST" action="/tweets/">
@@ -63,8 +65,8 @@
           </div>
         </form>
       </section>
-      <section class="tweet-container">
-      </section>
+      <!-- Old Tweets rendered below -->
+      <section class="tweet-container"></section>
     </main>
   </body>
 </html>

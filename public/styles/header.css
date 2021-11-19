@@ -16,6 +16,8 @@ header h2 {
   font-weight: normal;
 }
 
+/* Desktop design changes: */
+
 @media all and (min-width: 1024px) {
 
   .main {

@@ -1,13 +1,13 @@
 $(document).ready(function() {
 
-  $(".compose").click(() => {
+  $(".compose").click(() => { // On clicking "Write new tweet" scroll to top of page
     
     $("html").animate({scrollTop: 0}, 500);
-    $("#tweet-text").focus();
+    $("#tweet-text").focus(); // Auto focus on text area
 
   });
 
-  setInterval(() => {
+  setInterval(() => { // Looping animation of double angle arrow in nav bar
     
     $(".fa-angle-double-down").animate({margin: 25}, 1000);
     $(".fa-angle-double-down").animate({margin: 0}, 1000);

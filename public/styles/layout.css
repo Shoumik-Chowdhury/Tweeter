@@ -28,9 +28,7 @@ main {
   width: 90%;
 }
 
-/*
-* Additional CSS can be defined below or in other CSS files, as per instructions
-*/
+/* Desktop design changes: */
 
 @media all and (min-width: 1024px) {
 
