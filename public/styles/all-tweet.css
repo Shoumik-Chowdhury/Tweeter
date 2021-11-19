@@ -32,9 +32,10 @@ article footer {
 }
 
 .tweet-body{
-  height: 2em;
+  height: 2.5em;
   margin-top: 0.5em;
   margin-left: 1em;
+  overflow: scroll;
 }
 
 .icons .fas {
