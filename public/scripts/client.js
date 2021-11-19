@@ -50,7 +50,7 @@ $(document).ready(function() {
       $(".error-text").html(errMsg).hide().slideDown();
       return;
     };
-    
+
     if ($('.counter').val() < 0) {
       let errMsg = '<div id="long-tweet">Cannot post more than 140 characters! <i class="fas fa-exclamation-triangle"></i></div>';
       $(".error-text").html(errMsg).hide().slideDown();
@@ -67,6 +67,9 @@ $(document).ready(function() {
         renderTweets([lastTweet]);
       })
     }, 300);
+
+    $("#tweet-text").val("");
+    $("#tweet-text").focus();
 
   });
   
